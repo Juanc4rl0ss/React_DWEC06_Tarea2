@@ -2,7 +2,7 @@ import { useState,useEffect, useRef  } from "react";
 import Trabajador from "./Trabajador";
 
 //Este metodo se encarga de mostrar la informacion de los trabajadores
-function Trabajadores({actualizarNumero}){
+function Trabajadores({actualizarNumero, totalTrabajadores}){
 
     // Se crea un estado para guardar los trabajadores
     const[trabajadores, setTrabajadores] = useState([]);
@@ -38,7 +38,10 @@ function Trabajadores({actualizarNumero}){
     return(
 
         <>
-        {trabajadores.map(({ id, name, email, phone, eliminar }) => (
+        {/* Aquí mostramos el número de trabajadores obtenidos */}
+        <h3>Tenemos una plantilla de {totalTrabajadores} trabajadores</h3>
+
+        {trabajadores.map(({ id, name, email, phone }) => (
             <Trabajador
                 key={id}
                 id={id}

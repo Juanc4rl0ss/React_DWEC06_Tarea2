@@ -6,7 +6,6 @@ function Principal() {
     
     // Función para actualizar el número de trabajadores en el componente Principal
     const actualizarNumeroDeTrabajadores = (numero) => {
-          console.log("Número de trabajadores actualizado:", numero);
       setNumeroDeTrabajadores(numero);
     }
 
@@ -14,11 +13,9 @@ function Principal() {
 
       <main>
         <section className="container">
-          {/* Aquí mostramos el número de trabajadores obtenidos */}
-
-          <h3>Tenemos una plantilla de {numeroDeTrabajadores} trabajadores</h3>
           
-          <Trabajadores actualizarNumero={actualizarNumeroDeTrabajadores} />
+          <Trabajadores actualizarNumero={actualizarNumeroDeTrabajadores}
+                        totalTrabajadores={numeroDeTrabajadores} />
         </section>
 
       </main>
